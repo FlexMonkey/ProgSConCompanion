@@ -26,6 +26,7 @@
 		3EDFC0391CC688ED00A432FB /* GeneralKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */; };
 		3EDFC03B1CC68A2200A432FB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC03A1CC68A2200A432FB /* ImageView.swift */; };
 		3EDFC03D1CC68E4D00A432FB /* WarpKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC03C1CC68E4D00A432FB /* WarpKernel.swift */; };
+		3EDFC03F1CC690D400A432FB /* ColorKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC03E1CC690D400A432FB /* ColorKernel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralKernel.swift; sourceTree = "<group>"; };
 		3EDFC03A1CC68A2200A432FB /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		3EDFC03C1CC68E4D00A432FB /* WarpKernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpKernel.swift; sourceTree = "<group>"; };
+		3EDFC03E1CC690D400A432FB /* ColorKernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorKernel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				3E2905D81CC67E12007D7BD1 /* Equalization.swift */,
 				3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */,
 				3EDFC03C1CC68E4D00A432FB /* WarpKernel.swift */,
+				3EDFC03E1CC690D400A432FB /* ColorKernel.swift */,
 			);
 			name = demoViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				3EA012EC1CC622EA00F1DD54 /* Dilation.swift in Sources */,
 				3EA012E71CC622A200F1DD54 /* Helpers.swift in Sources */,
 				3E5EEF481CC6213100E06053 /* AppDelegate.swift in Sources */,
+				3EDFC03F1CC690D400A432FB /* ColorKernel.swift in Sources */,
 				3EDFC0391CC688ED00A432FB /* GeneralKernel.swift in Sources */,
 				3EDFC03B1CC68A2200A432FB /* ImageView.swift in Sources */,
 				3E2905D91CC67E12007D7BD1 /* Equalization.swift in Sources */,
