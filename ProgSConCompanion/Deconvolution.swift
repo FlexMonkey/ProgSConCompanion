@@ -23,7 +23,7 @@ class Deconvolution: UIViewController
     let kernelSide = UInt32(sqrt(Float(kernel.count)))
     
     let divisor: Int32 = 256
-    let iterationCount: UInt32 = 32
+    let iterationCount: UInt32 = 8
     
     
     var inBuffer = vImage_Buffer()

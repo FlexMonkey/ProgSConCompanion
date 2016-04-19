@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E2905D01CC63760007D7BD1 /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E2905CF1CC63760007D7BD1 /* building.jpg */; };
+		3E2905D51CC644CF007D7BD1 /* MetalPerformanceShaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2905D41CC644CF007D7BD1 /* MetalPerformanceShaders.swift */; };
 		3E5EEF481CC6213100E06053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5EEF471CC6213100E06053 /* AppDelegate.swift */; };
 		3E5EEF4A1CC6213100E06053 /* Histogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5EEF491CC6213100E06053 /* Histogram.swift */; };
 		3E5EEF4D1CC6213100E06053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E5EEF4B1CC6213100E06053 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		3E2905CF1CC63760007D7BD1 /* building.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = building.jpg; sourceTree = "<group>"; };
+		3E2905D41CC644CF007D7BD1 /* MetalPerformanceShaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalPerformanceShaders.swift; sourceTree = "<group>"; };
 		3E5EEF441CC6213100E06053 /* ProgSConCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgSConCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5EEF471CC6213100E06053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E5EEF491CC6213100E06053 /* Histogram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Histogram.swift; sourceTree = "<group>"; };
@@ -51,6 +53,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E2905D31CC644AC007D7BD1 /* demoViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E5EEF491CC6213100E06053 /* Histogram.swift */,
+				3EA012ED1CC6349F00F1DD54 /* Deconvolution.swift */,
+				3EA012EB1CC622EA00F1DD54 /* Dilation.swift */,
+				3E2905D41CC644CF007D7BD1 /* MetalPerformanceShaders.swift */,
+			);
+			name = demoViewControllers;
+			sourceTree = "<group>";
+		};
 		3E5EEF3B1CC6213100E06053 = {
 			isa = PBXGroup;
 			children = (
@@ -70,13 +83,11 @@
 		3E5EEF461CC6213100E06053 /* ProgSConCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				3E2905D31CC644AC007D7BD1 /* demoViewControllers */,
 				3EA012EA1CC622CD00F1DD54 /* assets */,
 				3EA012E51CC6228000F1DD54 /* support */,
 				3E5EEF471CC6213100E06053 /* AppDelegate.swift */,
-				3E5EEF491CC6213100E06053 /* Histogram.swift */,
 				3E5EEF4B1CC6213100E06053 /* Main.storyboard */,
-				3EA012ED1CC6349F00F1DD54 /* Deconvolution.swift */,
-				3EA012EB1CC622EA00F1DD54 /* Dilation.swift */,
 				3E5EEF4E1CC6213100E06053 /* Assets.xcassets */,
 				3E5EEF501CC6213100E06053 /* LaunchScreen.storyboard */,
 				3E5EEF531CC6213100E06053 /* Info.plist */,
@@ -185,6 +196,7 @@
 				3EA012EC1CC622EA00F1DD54 /* Dilation.swift in Sources */,
 				3EA012E71CC622A200F1DD54 /* AccelerateSupport.swift in Sources */,
 				3E5EEF481CC6213100E06053 /* AppDelegate.swift in Sources */,
+				3E2905D51CC644CF007D7BD1 /* MetalPerformanceShaders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

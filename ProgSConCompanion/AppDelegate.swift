@@ -29,8 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let deconvolution = Deconvolution()
     deconvolution.tabBarItem.title = "Deconvolution"
+    
+    let metalPerformanceShaders = MetalPerformanceShadersDemo()
+    metalPerformanceShaders.tabBarItem.title = "MetalPerformanceShaders"
 
-    tabbar.viewControllers = [histogram, dilation, deconvolution]
+    tabbar.viewControllers = [histogram, dilation, deconvolution, metalPerformanceShaders]
     
     window?.backgroundColor = UIColor.whiteColor()
     
