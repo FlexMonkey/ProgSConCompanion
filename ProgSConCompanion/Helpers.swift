@@ -1,5 +1,5 @@
 //
-//  AccelerateSupport.swift
+//  Helpers.swift
 //  ProgSConCompanion
 //
 //  Created by Simon Gladman on 19/04/2016.

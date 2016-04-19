@@ -12,7 +12,7 @@ import Accelerate
 class Deconvolution: UIViewController
 {
   var imageView = UIImageView()
-  var activityView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+  var activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
   
   
   let cicontext = CIContext()

@@ -18,11 +18,13 @@
 		3E5EEF521CC6213100E06053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E5EEF501CC6213100E06053 /* LaunchScreen.storyboard */; };
 		3EA012E31CC6221600F1DD54 /* monalisa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3EA012E11CC6221600F1DD54 /* monalisa.jpg */; };
 		3EA012E41CC6221600F1DD54 /* bluesky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3EA012E21CC6221600F1DD54 /* bluesky.jpg */; };
-		3EA012E71CC622A200F1DD54 /* AccelerateSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA012E61CC622A200F1DD54 /* AccelerateSupport.swift */; };
+		3EA012E71CC622A200F1DD54 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA012E61CC622A200F1DD54 /* Helpers.swift */; };
 		3EA012E91CC622CB00F1DD54 /* stars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3EA012E81CC622CB00F1DD54 /* stars.jpg */; };
 		3EA012EC1CC622EA00F1DD54 /* Dilation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA012EB1CC622EA00F1DD54 /* Dilation.swift */; };
 		3EA012EE1CC6349F00F1DD54 /* Deconvolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA012ED1CC6349F00F1DD54 /* Deconvolution.swift */; };
 		3EA012F01CC6350D00F1DD54 /* telescope.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3EA012EF1CC6350D00F1DD54 /* telescope.jpg */; };
+		3EDFC0391CC688ED00A432FB /* GeneralKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */; };
+		3EDFC03B1CC68A2200A432FB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC03A1CC68A2200A432FB /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +41,13 @@
 		3E5EEF531CC6213100E06053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EA012E11CC6221600F1DD54 /* monalisa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = monalisa.jpg; sourceTree = "<group>"; };
 		3EA012E21CC6221600F1DD54 /* bluesky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluesky.jpg; sourceTree = "<group>"; };
-		3EA012E61CC622A200F1DD54 /* AccelerateSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerateSupport.swift; sourceTree = "<group>"; };
+		3EA012E61CC622A200F1DD54 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		3EA012E81CC622CB00F1DD54 /* stars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stars.jpg; sourceTree = "<group>"; };
 		3EA012EB1CC622EA00F1DD54 /* Dilation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dilation.swift; sourceTree = "<group>"; };
 		3EA012ED1CC6349F00F1DD54 /* Deconvolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deconvolution.swift; sourceTree = "<group>"; };
 		3EA012EF1CC6350D00F1DD54 /* telescope.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = telescope.jpg; sourceTree = "<group>"; };
+		3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralKernel.swift; sourceTree = "<group>"; };
+		3EDFC03A1CC68A2200A432FB /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				3EA012EB1CC622EA00F1DD54 /* Dilation.swift */,
 				3E2905D41CC644CF007D7BD1 /* MetalPerformanceShaders.swift */,
 				3E2905D81CC67E12007D7BD1 /* Equalization.swift */,
+				3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */,
 			);
 			name = demoViewControllers;
 			sourceTree = "<group>";
@@ -103,7 +108,8 @@
 		3EA012E51CC6228000F1DD54 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				3EA012E61CC622A200F1DD54 /* AccelerateSupport.swift */,
+				3EDFC03A1CC68A2200A432FB /* ImageView.swift */,
+				3EA012E61CC622A200F1DD54 /* Helpers.swift */,
 			);
 			name = support;
 			sourceTree = "<group>";
@@ -201,8 +207,10 @@
 				3EA012EE1CC6349F00F1DD54 /* Deconvolution.swift in Sources */,
 				3E5EEF4A1CC6213100E06053 /* Histogram.swift in Sources */,
 				3EA012EC1CC622EA00F1DD54 /* Dilation.swift in Sources */,
-				3EA012E71CC622A200F1DD54 /* AccelerateSupport.swift in Sources */,
+				3EA012E71CC622A200F1DD54 /* Helpers.swift in Sources */,
 				3E5EEF481CC6213100E06053 /* AppDelegate.swift in Sources */,
+				3EDFC0391CC688ED00A432FB /* GeneralKernel.swift in Sources */,
+				3EDFC03B1CC68A2200A432FB /* ImageView.swift in Sources */,
 				3E2905D91CC67E12007D7BD1 /* Equalization.swift in Sources */,
 				3E2905D51CC644CF007D7BD1 /* MetalPerformanceShaders.swift in Sources */,
 			);
