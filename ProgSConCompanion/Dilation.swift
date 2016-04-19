@@ -40,6 +40,8 @@ class Dilation: UIViewController
   
   override func viewDidLoad()
   {
+    view.backgroundColor = UIColor.blackColor()
+    
     view.addSubview(imageView)
     imageView.contentMode = .ScaleAspectFit
     
@@ -104,6 +106,11 @@ class Dilation: UIViewController
   override func viewDidLayoutSubviews()
   {
     imageView.frame = view.bounds.insetBy(dx: 50, dy: 50)
+  }
+  
+  override func preferredStatusBarStyle() -> UIStatusBarStyle
+  {
+    return .LightContent
   }
   
 }

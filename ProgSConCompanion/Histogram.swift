@@ -21,6 +21,8 @@ class Histogram: UIViewController
   {
     super.viewDidLoad()
     
+    view.backgroundColor = UIColor.blackColor()
+    
     srcImageView.contentMode = .ScaleAspectFit
     targteImageView.contentMode = .ScaleAspectFit
     fianlImageView.contentMode = .ScaleAspectFit
@@ -110,6 +112,11 @@ class Histogram: UIViewController
     free(imageBuffers.pixelBuffer)
     
     return outImage!
+  }
+ 
+  override func preferredStatusBarStyle() -> UIStatusBarStyle
+  {
+    return .LightContent
   }
   
 }

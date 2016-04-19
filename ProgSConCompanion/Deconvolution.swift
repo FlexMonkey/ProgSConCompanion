@@ -74,6 +74,8 @@ class Deconvolution: UIViewController
 
   override func viewDidLoad()
   {
+    view.backgroundColor = UIColor.blackColor()
+    
     view.addSubview(imageView)
     view.addSubview(activityView)
     
@@ -108,6 +110,11 @@ class Deconvolution: UIViewController
   {
     imageView.frame = view.bounds.insetBy(dx: 50, dy: 50)
     activityView.frame = view.bounds
+  }
+  
+  override func preferredStatusBarStyle() -> UIStatusBarStyle
+  {
+    return .LightContent
   }
   
 }

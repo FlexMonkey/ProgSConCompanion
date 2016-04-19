@@ -32,8 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let metalPerformanceShaders = MetalPerformanceShadersDemo()
     metalPerformanceShaders.tabBarItem.title = "MetalPerformanceShaders"
+    
+    let equalization = HistogramEqualization()
+    equalization.tabBarItem.title = "Equalization"
 
-    tabbar.viewControllers = [histogram, dilation, deconvolution, metalPerformanceShaders]
+    tabbar.viewControllers = [histogram, dilation, equalization, deconvolution, metalPerformanceShaders]
     
     window?.backgroundColor = UIColor.whiteColor()
     
