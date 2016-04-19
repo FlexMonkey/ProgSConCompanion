@@ -12,6 +12,8 @@ import Accelerate
 class Deconvolution: UIViewController
 {
   var imageView = UIImageView()
+  var activityView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+  
   
   let cicontext = CIContext()
 
@@ -23,7 +25,7 @@ class Deconvolution: UIViewController
     let kernelSide = UInt32(sqrt(Float(kernel.count)))
     
     let divisor: Int32 = 256
-    let iterationCount: UInt32 = 8
+    let iterationCount: UInt32 = 64
     
     
     var inBuffer = vImage_Buffer()
@@ -73,7 +75,10 @@ class Deconvolution: UIViewController
   override func viewDidLoad()
   {
     view.addSubview(imageView)
+    view.addSubview(activityView)
+    
     imageView.contentMode = .ScaleAspectFit
+    activityView.startAnimating()
     
     let source = UIImage(named: "building.jpg")!
     
@@ -81,19 +86,28 @@ class Deconvolution: UIViewController
       .imageByApplyingFilter("CIBoxBlur", withInputParameters: [kCIInputRadiusKey: 15])
       .imageByCroppingToRect(CGRect(origin: CGPointZero, size: source.size).insetBy(dx: 15, dy: 15))
     
-    let image = UIImage(CGImage: cicontext.createCGImage(blurred, fromRect: blurred.extent))
-    
-    let final = deConvolve(image.CGImage!)
-    
-    imageView.animationImages = [image, final]
-    
-    imageView.animationDuration = 2.0
-    imageView.startAnimating()
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0))
+    {
+      let image = UIImage(CGImage: self.cicontext.createCGImage(blurred, fromRect: blurred.extent))
+      
+      let final = self.deConvolve(image.CGImage!)
+      
+      dispatch_async(dispatch_get_main_queue())
+      {
+        self.imageView.animationImages = [image, final]
+        
+        self.imageView.animationDuration = 2.0
+        self.imageView.startAnimating()
+        
+        self.activityView.stopAnimating()
+      }
+    }
   }
   
   override func viewDidLayoutSubviews()
   {
     imageView.frame = view.bounds.insetBy(dx: 50, dy: 50)
+    activityView.frame = view.bounds
   }
   
 }
