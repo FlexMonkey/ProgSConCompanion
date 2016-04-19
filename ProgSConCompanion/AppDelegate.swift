@@ -26,8 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let dilation = Dilation()
     dilation.tabBarItem.title = "Dilation"
+    
+    let deconvolution = Deconvolution()
+    deconvolution.tabBarItem.title = "Deconvolution"
 
-    tabbar.viewControllers = [histogram, dilation]
+    tabbar.viewControllers = [histogram, dilation, deconvolution]
     
     window?.backgroundColor = UIColor.whiteColor()
     
