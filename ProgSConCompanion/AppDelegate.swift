@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let icon = UIImage(CIImage: CIImage(color: CIColor(red: 1, green: 0, blue: 0)).imageByCroppingToRect(CGRect(x: 0, y: 0, width: 30, height: 30)))
     
+    let warpKernel = WarpKernel()
+    warpKernel.tabBarItem.title = "Warp Kernel"
+    warpKernel.tabBarItem.image = icon
+    
     let generalKernel = GeneralKernel()
     generalKernel.tabBarItem.title = "General Kernel"
     generalKernel.tabBarItem.image = icon
@@ -46,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     equalization.tabBarItem.title = "Equalization"
     equalization.tabBarItem.image = icon
 
-    tabbar.viewControllers = [generalKernel, histogram, dilation, equalization, deconvolution, metalPerformanceShaders]
+    tabbar.viewControllers = [warpKernel, generalKernel, histogram, dilation, equalization, deconvolution, metalPerformanceShaders]
     
     window?.backgroundColor = UIColor.whiteColor()
     

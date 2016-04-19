@@ -25,6 +25,7 @@
 		3EA012F01CC6350D00F1DD54 /* telescope.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3EA012EF1CC6350D00F1DD54 /* telescope.jpg */; };
 		3EDFC0391CC688ED00A432FB /* GeneralKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */; };
 		3EDFC03B1CC68A2200A432FB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC03A1CC68A2200A432FB /* ImageView.swift */; };
+		3EDFC03D1CC68E4D00A432FB /* WarpKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC03C1CC68E4D00A432FB /* WarpKernel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		3EA012EF1CC6350D00F1DD54 /* telescope.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = telescope.jpg; sourceTree = "<group>"; };
 		3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralKernel.swift; sourceTree = "<group>"; };
 		3EDFC03A1CC68A2200A432FB /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		3EDFC03C1CC68E4D00A432FB /* WarpKernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpKernel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				3E2905D41CC644CF007D7BD1 /* MetalPerformanceShaders.swift */,
 				3E2905D81CC67E12007D7BD1 /* Equalization.swift */,
 				3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */,
+				3EDFC03C1CC68E4D00A432FB /* WarpKernel.swift */,
 			);
 			name = demoViewControllers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EDFC03D1CC68E4D00A432FB /* WarpKernel.swift in Sources */,
 				3EA012EE1CC6349F00F1DD54 /* Deconvolution.swift in Sources */,
 				3E5EEF4A1CC6213100E06053 /* Histogram.swift in Sources */,
 				3EA012EC1CC622EA00F1DD54 /* Dilation.swift in Sources */,
