@@ -27,6 +27,8 @@
 		3EDFC03B1CC68A2200A432FB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC03A1CC68A2200A432FB /* ImageView.swift */; };
 		3EDFC03D1CC68E4D00A432FB /* WarpKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC03C1CC68E4D00A432FB /* WarpKernel.swift */; };
 		3EDFC03F1CC690D400A432FB /* ColorKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC03E1CC690D400A432FB /* ColorKernel.swift */; };
+		3EDFC0411CC75BE100A432FB /* bruges.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3EDFC0401CC75BE100A432FB /* bruges.jpg */; };
+		3EDFC0431CC75C1E00A432FB /* SimpleCoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC0421CC75C1E00A432FB /* SimpleCoreImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		3EDFC03A1CC68A2200A432FB /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		3EDFC03C1CC68E4D00A432FB /* WarpKernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpKernel.swift; sourceTree = "<group>"; };
 		3EDFC03E1CC690D400A432FB /* ColorKernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorKernel.swift; sourceTree = "<group>"; };
+		3EDFC0401CC75BE100A432FB /* bruges.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bruges.jpg; sourceTree = "<group>"; };
+		3EDFC0421CC75C1E00A432FB /* SimpleCoreImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCoreImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 				3EDFC0381CC688ED00A432FB /* GeneralKernel.swift */,
 				3EDFC03C1CC68E4D00A432FB /* WarpKernel.swift */,
 				3EDFC03E1CC690D400A432FB /* ColorKernel.swift */,
+				3EDFC0421CC75C1E00A432FB /* SimpleCoreImage.swift */,
 			);
 			name = demoViewControllers;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				3E2905D61CC67DEE007D7BD1 /* kl.jpg */,
+				3EDFC0401CC75BE100A432FB /* bruges.jpg */,
 				3EA012EF1CC6350D00F1DD54 /* telescope.jpg */,
 				3EA012E11CC6221600F1DD54 /* monalisa.jpg */,
 				3E2905CF1CC63760007D7BD1 /* building.jpg */,
@@ -196,6 +202,7 @@
 				3E5EEF4F1CC6213100E06053 /* Assets.xcassets in Resources */,
 				3E5EEF4D1CC6213100E06053 /* Main.storyboard in Resources */,
 				3EA012F01CC6350D00F1DD54 /* telescope.jpg in Resources */,
+				3EDFC0411CC75BE100A432FB /* bruges.jpg in Resources */,
 				3E2905D71CC67DEE007D7BD1 /* kl.jpg in Resources */,
 				3EA012E41CC6221600F1DD54 /* bluesky.jpg in Resources */,
 				3EA012E31CC6221600F1DD54 /* monalisa.jpg in Resources */,
@@ -220,6 +227,7 @@
 				3EDFC0391CC688ED00A432FB /* GeneralKernel.swift in Sources */,
 				3EDFC03B1CC68A2200A432FB /* ImageView.swift in Sources */,
 				3E2905D91CC67E12007D7BD1 /* Equalization.swift in Sources */,
+				3EDFC0431CC75C1E00A432FB /* SimpleCoreImage.swift in Sources */,
 				3E2905D51CC644CF007D7BD1 /* MetalPerformanceShaders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
