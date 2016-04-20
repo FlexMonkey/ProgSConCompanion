@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     generalKernel.tabBarItem.image = icon
     
     let histogram = Histogram()
-    histogram.tabBarItem.title = "Histogram"
+    histogram.tabBarItem.title = "Specification"
     histogram.tabBarItem.image = icon
     
     let dilation = Dilation()
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     equalization.tabBarItem.title = "Equalization"
     equalization.tabBarItem.image = icon
 
-    tabbar.viewControllers = [simple, colorKernel, warpKernel, generalKernel, histogram, dilation, equalization, deconvolution, metalPerformanceShaders]
+    tabbar.viewControllers = [simple, colorKernel, warpKernel, generalKernel, equalization, histogram, dilation, deconvolution, metalPerformanceShaders]
     
     window?.backgroundColor = UIColor.whiteColor()
     

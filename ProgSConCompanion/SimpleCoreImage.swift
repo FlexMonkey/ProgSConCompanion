@@ -27,13 +27,23 @@ class SimpleCoreImage: UIViewController
       .imageByCroppingToRect(image.extent)
     
     let filteredImage = image
-      .imageByApplyingFilter("CIVignette", withInputParameters: [kCIInputIntensityKey: 4])
-      .imageByApplyingFilter("CIDarkenBlendMode", withInputParameters: [kCIInputBackgroundImageKey: noise!])
-      .imageByApplyingFilter("CIColorControls", withInputParameters: [kCIInputSaturationKey: 0.25, kCIInputContrastKey: 1.15])
-      .imageByApplyingFilter("CISepiaTone", withInputParameters: nil)
+      .imageByApplyingFilter(
+        "CIVignette",
+        withInputParameters: [kCIInputIntensityKey: 4])
+      .imageByApplyingFilter(
+        "CIDarkenBlendMode",
+        withInputParameters: [kCIInputBackgroundImageKey: noise!])
+      .imageByApplyingFilter(
+        "CIColorControls",
+        withInputParameters: [kCIInputSaturationKey: 0.25, kCIInputContrastKey: 1.15])
+      .imageByApplyingFilter(
+        "CISepiaTone",
+        withInputParameters: nil)
     
 
-    let finalImage = context.createCGImage(filteredImage, fromRect: filteredImage.extent)
+    let finalImage = context.createCGImage(
+      filteredImage,
+      fromRect: filteredImage.extent)
     
     imageView.animationImages = [bruges, UIImage(CGImage: finalImage)]
     

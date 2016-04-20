@@ -64,6 +64,8 @@ class ShadedTileFilter: CIFilter
     let extent = inputImage.extent
     let arguments = [inputImage]
     
-    return shadedTileKernel.applyWithExtent(extent, arguments: arguments)
+    return shadedTileKernel.applyWithExtent(
+      extent,
+      arguments: arguments)
   }
 }

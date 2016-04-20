@@ -10,7 +10,7 @@ import UIKit
 import MetalPerformanceShaders
 import MetalKit
 
-let sourceImage = UIImage(named: "telescope.jpg")!.imageRotatedByDegrees(180, flip: false)
+let sourceImage = UIImage(named: "telescope.jpg")!
 
 class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
 {
@@ -70,15 +70,44 @@ class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
     
     frameNumber += 0.05
     
-    let blur = MPSImageGaussianBlur(device: device, sigma: abs(sin(frameNumber)) * 200)
+    let intermediateTextureDesciptor = MTLTextureDescriptor.texture2DDescriptorWithPixelFormat(
+      MTLPixelFormat.RGBA8Unorm,
+      width: imageTexture.width,
+      height: imageTexture.height,
+      mipmapped: false)
+    
+    let intermediateTexture = device.newTextureWithDescriptor(intermediateTextureDesciptor)
+    
+    let scale = MPSImageLanczosScale(device: device)
+    
+    var tx = MPSScaleTransform(
+      scaleX: 1,
+      scaleY: -1,
+      translateX: 0,
+      translateY: Double(-imageTexture.height))
+    
+    withUnsafePointer(&tx) {
+      scale.scaleTransform = $0
+    }
+    
+    let blur = MPSImageGaussianBlur(
+      device: device,
+      sigma: abs(sin(frameNumber)) * 200)
+    
+    // ----
     
     let commandQueue = device.newCommandQueue()
     
     let commandBuffer = commandQueue.commandBuffer()
+
+    scale.encodeToCommandBuffer(
+      commandBuffer,
+      sourceTexture: imageTexture,
+      destinationTexture: intermediateTexture)
     
     blur.encodeToCommandBuffer(
       commandBuffer,
-      sourceTexture: imageTexture,
+      sourceTexture: intermediateTexture,
       destinationTexture: currentDrawable.texture)
     
     commandBuffer.presentDrawable(imageView.currentDrawable!)

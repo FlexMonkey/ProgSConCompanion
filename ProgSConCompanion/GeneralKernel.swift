@@ -71,30 +71,30 @@ class MaskedVariableBlur: CIFilter
   var inputBlurMask: CIImage?
   var inputBlurRadius: CGFloat = 25
   
-  let maskedVariableBlur = CIKernel(string:
-    "kernel vec4 lumaVariableBlur(sampler image, sampler blurImage, float blurRadius) " +
-      "{ " +
-      "   vec2 d = destCoord(); " +
-      "    vec3 blurPixel = sample(blurImage, samplerCoord(blurImage)).rgb; " +
-      "    float blurAmount = dot(blurPixel, vec3(0.2126, 0.7152, 0.0722)); " +
-      "    float n = 0.0; " +
-      "    int radius = int(blurAmount * blurRadius); " +
-      "    vec3 accumulator = vec3(0.0, 0.0, 0.0); " +
-      "    for (int x = -radius; x <= radius; x++) " +
-      "    { " +
-      "        for (int y = -radius; y <= radius; y++) " +
-      "        { " +
-      "            vec2 workingSpaceCoordinate = d + vec2(x,y); " +
-      "            vec2 imageSpaceCoordinate = samplerTransform(image, workingSpaceCoordinate); " +
-      "            vec3 color = sample(image, imageSpaceCoordinate).rgb; " +
-      "            accumulator += color; " +
-      "            n += 1.0; " +
-      "        } " +
-      "    } " +
-      "    accumulator /= n; " +
-      "    return vec4(accumulator, 1.0); " +
-    "} "
-  )
+let maskedVariableBlur = CIKernel(string:
+  "kernel vec4 lumaVariableBlur(sampler image, sampler blurImage, float blurRadius) " +
+    "{ " +
+    "   vec2 d = destCoord(); " +
+    "    vec3 blurPixel = sample(blurImage, samplerCoord(blurImage)).rgb; " +
+    "    float blurAmount = dot(blurPixel, vec3(0.2126, 0.7152, 0.0722)); " +
+    "    float n = 0.0; " +
+    "    int radius = int(blurAmount * blurRadius); " +
+    "    vec3 accumulator = vec3(0.0, 0.0, 0.0); " +
+    "    for (int x = -radius; x <= radius; x++) " +
+    "    { " +
+    "        for (int y = -radius; y <= radius; y++) " +
+    "        { " +
+    "            vec2 workingSpaceCoordinate = d + vec2(x,y); " +
+    "            vec2 imageSpaceCoordinate = samplerTransform(image, workingSpaceCoordinate); " +
+    "            vec3 color = sample(image, imageSpaceCoordinate).rgb; " +
+    "            accumulator += color; " +
+    "            n += 1.0; " +
+    "        } " +
+    "    } " +
+    "    accumulator /= n; " +
+    "    return vec4(accumulator, 1.0); " +
+  "} "
+)
   
   override var outputImage: CIImage!
   {
