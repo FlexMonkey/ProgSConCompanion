@@ -78,17 +78,15 @@ class Dilation: UIViewController
     
     let pixelBuffer = malloc(CGImageGetBytesPerRow(imageRef) * CGImageGetHeight(imageRef))
     
-    let outBuffer = vImage_Buffer(
+    var outBuffer = vImage_Buffer(
       data: pixelBuffer,
       height: UInt(CGImageGetHeight(imageRef)),
       width: UInt(CGImageGetWidth(imageRef)),
       rowBytes: CGImageGetBytesPerRow(imageRef))
-    
-    var imageBuffers = ImageBuffers(inBuffer: inBuffer, outBuffer: outBuffer, pixelBuffer: pixelBuffer)
-    
+
     vImageDilate_ARGB8888(
-      &imageBuffers.inBuffer,
-      &imageBuffers.outBuffer,
+      &inBuffer,
+      &outBuffer,
       0,
       0,
       kernel,
@@ -96,9 +94,9 @@ class Dilation: UIViewController
       UInt(kernelSide),
       UInt32(kvImageNoFlags))
     
-    let outImage = UIImage(fromvImageOutBuffer: imageBuffers.outBuffer)
+    let outImage = UIImage(fromvImageOutBuffer: outBuffer)
     
-    free(imageBuffers.pixelBuffer)
+    free(pixelBuffer)
     
     return outImage!
   }

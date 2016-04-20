@@ -9,8 +9,6 @@
 import UIKit
 import Accelerate
 
-typealias ImageBuffers = (inBuffer: vImage_Buffer, outBuffer: vImage_Buffer, pixelBuffer: UnsafeMutablePointer<Void>)
-
 let bitmapInfo:CGBitmapInfo = CGBitmapInfo(
   rawValue: CGImageAlphaInfo.Last.rawValue)
 

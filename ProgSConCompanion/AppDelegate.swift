@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     deconvolution.tabBarItem.image = icon
     
     let metalPerformanceShaders = MetalPerformanceShadersDemo()
-    metalPerformanceShaders.tabBarItem.title = "MPS"
+    metalPerformanceShaders.tabBarItem.title = "Metal Performance Shaders"
     metalPerformanceShaders.tabBarItem.image = icon
     
     let equalization = HistogramEqualization()

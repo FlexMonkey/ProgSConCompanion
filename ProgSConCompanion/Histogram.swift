@@ -90,14 +90,12 @@ class Histogram: UIViewController
     
     let pixelBuffer = malloc(CGImageGetBytesPerRow(imageRef) * CGImageGetHeight(imageRef))
     
-    let outBuffer = vImage_Buffer(
+    var outBuffer = vImage_Buffer(
       data: pixelBuffer,
       height: UInt(CGImageGetHeight(imageRef)),
       width: UInt(CGImageGetWidth(imageRef)),
       rowBytes: CGImageGetBytesPerRow(imageRef))
-    
-    var imageBuffers = ImageBuffers(inBuffer: inBuffer, outBuffer: outBuffer, pixelBuffer: pixelBuffer)
-    
+
     let alphaPtr = UnsafePointer<vImagePixelCount>(histogram.alpha)
     let redPtr = UnsafePointer<vImagePixelCount>(histogram.red)
     let greenPtr = UnsafePointer<vImagePixelCount>(histogram.green)
@@ -105,11 +103,11 @@ class Histogram: UIViewController
     
     let rgba = UnsafeMutablePointer<UnsafePointer<vImagePixelCount>>([alphaPtr, redPtr, greenPtr, bluePtr])
     
-    vImageHistogramSpecification_ARGB8888(&imageBuffers.inBuffer, &imageBuffers.outBuffer, rgba, UInt32(kvImageNoFlags))
+    vImageHistogramSpecification_ARGB8888(&inBuffer, &outBuffer, rgba, UInt32(kvImageNoFlags))
     
-    let outImage = UIImage(fromvImageOutBuffer: imageBuffers.outBuffer)
+    let outImage = UIImage(fromvImageOutBuffer: outBuffer)
     
-    free(imageBuffers.pixelBuffer)
+    free(pixelBuffer)
     
     return outImage!
   }

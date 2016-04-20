@@ -59,7 +59,6 @@ class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
   {
     if imageView.frame.size == CGSizeZero
     {
-      print("UGH!!")
       return
     }
     
@@ -86,7 +85,8 @@ class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
       translateX: 0,
       translateY: Double(-imageTexture.height))
     
-    withUnsafePointer(&tx) {
+    withUnsafePointer(&tx)
+    {
       scale.scaleTransform = $0
     }
     
