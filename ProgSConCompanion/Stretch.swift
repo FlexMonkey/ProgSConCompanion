@@ -1,5 +1,5 @@
 //
-//  Equalization.swift
+//  Stretch.swift
 //  ProgSConCompanion
 //
 //  Created by Simon Gladman on 19/04/2016.
@@ -9,13 +9,13 @@
 import UIKit
 import Accelerate
 
-class HistogramEqualization: UIViewController
+class ContrastStretch: UIViewController
 {
   var stack:UIStackView!
   
   let srcImageView = UIImageView()
   let targetImageView = UIImageView()
-
+  
   override func viewDidLoad()
   {
     super.viewDidLoad()
@@ -29,16 +29,16 @@ class HistogramEqualization: UIViewController
     stack.distribution = .FillEqually
     stack.spacing = 20
     
-    stack.frame = view.bounds.insetBy(dx: 20, dy: 20)
+    stack.frame = view.bounds.insetBy(dx: 20, dy: 60)
     view.addSubview(stack)
     
-    let klImage = UIImage(named: "kl.jpg")!
+    let klImage = UIImage(named: "sky.jpg")!
     
     srcImageView.image = klImage
-    targetImageView.image = equalizationFilter(klImage.CGImage!)
+    targetImageView.image = stretchFilter(klImage.CGImage!)
   }
-
-  func equalizationFilter(imageRef: CGImage) -> UIImage
+  
+  func stretchFilter(imageRef: CGImage) -> UIImage
   {
     view.backgroundColor = UIColor.blackColor()
     
@@ -59,11 +59,11 @@ class HistogramEqualization: UIViewController
       width: UInt(CGImageGetWidth(imageRef)),
       rowBytes: CGImageGetBytesPerRow(imageRef))
     
-    vImageEqualization_ARGB8888(
+    vImageContrastStretch_ARGB8888(
       &inBuffer,
       &outBuffer,
-      UInt32(kvImageNoFlags)) 
-
+      UInt32(kvImageNoFlags))
+    
     let outImage = UIImage(fromvImageOutBuffer: outBuffer)
     
     free(pixelBuffer)

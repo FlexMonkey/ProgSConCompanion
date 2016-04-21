@@ -50,6 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     deconvolution.tabBarItem.title = "Deconvolution"
     deconvolution.tabBarItem.image = icon
     
+    let stretch = ContrastStretch()
+    stretch.tabBarItem.title = "Stretch"
+    stretch.tabBarItem.image = icon
+    
     let metalPerformanceShaders = MetalPerformanceShadersDemo()
     metalPerformanceShaders.tabBarItem.title = "Metal Performance Shaders"
     metalPerformanceShaders.tabBarItem.image = icon
@@ -58,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     equalization.tabBarItem.title = "Equalization"
     equalization.tabBarItem.image = icon
 
-    tabbar.viewControllers = [simple, colorKernel, warpKernel, generalKernel, equalization, histogram, dilation, deconvolution, metalPerformanceShaders]
+    tabbar.viewControllers = [simple, colorKernel, warpKernel, generalKernel, equalization, histogram, stretch, dilation, deconvolution, metalPerformanceShaders]
     
     window?.backgroundColor = UIColor.whiteColor()
     
