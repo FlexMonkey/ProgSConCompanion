@@ -45,6 +45,7 @@ class SimpleCoreImage: UIViewController
       filteredImage,
       fromRect: filteredImage.extent)
     
+    imageView.contentMode = .ScaleAspectFit
     imageView.animationImages = [bruges, UIImage(CGImage: finalImage)]
     
     imageView.animationDuration = 2.0

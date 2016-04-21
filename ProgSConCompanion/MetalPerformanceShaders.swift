@@ -7,6 +7,9 @@
 //
 
 import UIKit
+
+#if !arch(i386) && !arch(x86_64)
+  
 import MetalPerformanceShaders
 import MetalKit
 
@@ -143,5 +146,37 @@ class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
     return .LightContent
   }
 }
+
+#else
+
+  class MetalPerformanceShadersDemo: UIViewController
+  {
+    let label = UILabel()
+    
+    override func viewDidLoad()
+    {
+      view.backgroundColor = UIColor.blackColor()
+      
+      label.textAlignment = .Center
+      label.textColor = UIColor.yellowColor()
+      label.font = UIFont.boldSystemFontOfSize(36)
+      label.text = "Not available in simulator"
+      
+      view.addSubview(label)
+    }
+    
+    override func viewDidLayoutSubviews()
+    {
+      label.frame = view.bounds
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+      return .LightContent
+    }
+
+  }
+
+ #endif
 
 
