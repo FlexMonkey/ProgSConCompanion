@@ -17,7 +17,10 @@ class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
   let imageView = MTKView()
   let device = MTLCreateSystemDefaultDevice()!
   
-  var frameNumber: Float = 1
+  var value: Float = 1
+  
+  private var frameStartTime = CFAbsoluteTimeGetCurrent()
+  private var frameNumber = 0
   
   let imageTexture: MTLTexture =
   {
@@ -45,6 +48,7 @@ class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
 
     view.addSubview(imageView)
     
+    imageView.contentScaleFactor = 1
     imageView.framebufferOnly = false
   }
   
@@ -67,7 +71,17 @@ class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
       return
     }
     
-    frameNumber += 0.05
+    frameNumber += 1
+    
+    if frameNumber == 100
+    {
+      let frametime = (CFAbsoluteTimeGetCurrent() - frameStartTime) / 100
+      print (String(format: "%.1f fps", 1 / frametime))
+      frameStartTime = CFAbsoluteTimeGetCurrent()
+      frameNumber = 0
+    }
+    
+    value += 0.025
     
     let intermediateTextureDesciptor = MTLTextureDescriptor.texture2DDescriptorWithPixelFormat(
       MTLPixelFormat.RGBA8Unorm,
@@ -92,7 +106,7 @@ class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
     
     let blur = MPSImageGaussianBlur(
       device: device,
-      sigma: abs(sin(frameNumber)) * 200)
+      sigma: abs(sin(value)) * 200)
     
     // ----
     
@@ -118,10 +132,10 @@ class MetalPerformanceShadersDemo: UIViewController, MTKViewDelegate
   override func viewDidLayoutSubviews()
   {
     imageView.frame = CGRect(
-      x: view.frame.midX - sourceImage.size.width / 4,
-      y: view.frame.midY - sourceImage.size.height / 4,
-      width: sourceImage.size.width / 2,
-      height: sourceImage.size.height / 2)
+      x: view.frame.midX - sourceImage.size.width / 2,
+      y: view.frame.midY - sourceImage.size.height / 2,
+      width: sourceImage.size.width,
+      height: sourceImage.size.height)
   }
   
   override func preferredStatusBarStyle() -> UIStatusBarStyle
